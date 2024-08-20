@@ -1,10 +1,10 @@
-# metashrew-ord
+# metashrew-bel20
 
-Implementation of [https://github.com/ordinals/ord](https://github.com/ordinals/ord) using BST structures for sat ranges.
+(TODO)
 
-For Bellschain, we simply hardcode a block reward of 5000e8 units of currency and treat coinbase output value less than this amount as unspent and directed to 0xdead outpoint.
+Implementation of BEL20 metaprotocol built on the Bellschain variant of the ordinals implementation of metashrew.
 
-This is acceptable to implement [https://github.com/sandshrewmetaprotocols/metashrew-bel20](https://github.com/sandshrewmetaprotocols/metashrew-bel20).
+Fork this repository to implement arbitrary metaprotocols that are built on BEL20.
 
 ## Author
 

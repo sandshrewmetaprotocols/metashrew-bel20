@@ -2,7 +2,7 @@
   "version": "0.1.0",
   "main": "lib/index.js",
   "bin": {
-    "metashrew-ord": "./bin/metashrew-ord.js"
+    "metashrew-bel20": "./bin/metashrew-bel20.js"
   },
   "scripts": {
     "asbuild:debug": "asc assembly/index.ts --target debug --enable threads --config asconfig.json",
@@ -43,6 +43,6 @@
     "ts-mocha": "^10.0.0",
     "typescript": "^5.3.3"
   },
-  "name": "metashrew-ord",
-  "description": "metashrew-ord"
+  "name": "metashrew-bel20",
+  "description": "metashrew-bel20"
 }
