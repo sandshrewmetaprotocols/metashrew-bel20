@@ -241,7 +241,7 @@ function excessSats(source: SatSource): void {
 }
 
 function blockReward(height: u64): u64 {
-  return <u64>50e8 / <u64>(<u64>1 << (<u64>height / 210000));
+  return <u64>5000e8;
 }
 
 

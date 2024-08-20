@@ -2,9 +2,9 @@
 
 Implementation of [https://github.com/ordinals/ord](https://github.com/ordinals/ord) using BST structures for sat ranges.
 
-No use of hardcoded block subsidies, so this implementation is compatible with Dogecoin, in addition to Bitcoin.
+For Bellschain, we simply hardcode a block reward of 5000e8 units of currency and treat coinbase output value less than this amount as unspent and directed to 0xdead outpoint.
 
-Fork this repository to implement arbitrary metaprotocols that are built on inscriptions.
+This is acceptable to implement [https://github.com/sandshrewmetaprotocols/metashrew-bel20](https://github.com/sandshrewmetaprotocols/metashrew-bel20).
 
 ## Author
 

@@ -8881,8 +8881,8 @@
   (local $3 i32)
   (local $4 i32)
   (local $5 i32)
-  (local $6 i64)
-  (local $7 i32)
+  (local $6 i32)
+  (local $7 i64)
   (local $8 i64)
   (local $9 i64)
   (local $10 i32)
@@ -8940,7 +8940,7 @@
      i32.lt_s
      if
       global.get $assembly/tables/OUTPOINT_TO_VALUE
-      local.set $7
+      local.set $6
       local.get $5
       local.get $1
       call $~lib/metashrew-as/assembly/blockdata/transaction/OutPoint.from
@@ -8954,22 +8954,22 @@
       local.get $10
       i32.load offset=4
       memory.copy
-      local.get $7
+      local.get $6
       local.get $11
       call $~lib/metashrew-as/assembly/indexer/tables/IndexPointer#select
-      local.set $7
+      local.set $6
       local.get $4
       i32.load offset=16
       local.get $1
       call $~lib/array/Array<~lib/metashrew-as/assembly/blockdata/transaction/Input>#__get
       i64.load offset=8
-      local.set $6
+      local.set $7
       i32.const 8
       call $~lib/arraybuffer/ArrayBuffer#constructor
       local.tee $10
-      local.get $6
-      i64.store
       local.get $7
+      i64.store
+      local.get $6
       local.get $10
       call $~lib/metashrew-as/assembly/indexer/tables/IndexPointer#set
       local.get $1
@@ -8994,22 +8994,13 @@
   global.get $assembly/tables/STARTING_SAT
   call $~lib/metashrew-as/assembly/indexer/tables/IndexPointer#getValue<u64>
   local.set $8
-  i64.const 5000000000
-  i64.const 1
-  local.get $0
-  i64.extend_i32_u
-  i64.const 210000
-  i64.div_u
-  i64.shl
-  i64.div_u
-  local.set $6
   global.get $assembly/tables/STARTING_SAT
   local.set $3
   i32.const 8
   call $~lib/arraybuffer/ArrayBuffer#constructor
   local.tee $4
-  local.get $6
   local.get $8
+  i64.const 500000000000
   i64.add
   i64.store
   local.get $3
@@ -9025,7 +9016,7 @@
   call $~lib/array/Array<u64>#constructor
   local.tee $4
   i32.const 0
-  local.get $6
+  i64.const 500000000000
   call $~lib/array/Array<u64>#__set
   local.get $3
   local.get $4
@@ -9038,9 +9029,9 @@
   local.get $15
   call $assembly/index/SatSink#consume
   i32.const 1
-  local.set $7
+  local.set $6
   loop $for-loop|01
-   local.get $7
+   local.get $6
    local.get $2
    i32.load offset=8
    local.tee $1
@@ -9048,7 +9039,7 @@
    i32.lt_s
    if
     local.get $1
-    local.get $7
+    local.get $6
     call $~lib/array/Array<~lib/metashrew-as/assembly/blockdata/transaction/Input>#__get
     local.tee $11
     call $assembly/index/SatSink#constructor
@@ -9216,10 +9207,10 @@
       i32.shl
       i32.add
       i64.load
-      local.set $6
+      local.set $7
       i32.const 3
       global.set $~argumentsLength
-      local.get $6
+      local.get $7
       local.get $5
       local.get $3
       i32.const 7184
@@ -9256,7 +9247,7 @@
       i32.load offset=4
       local.get $3
       call $~lib/array/Array<u64>#__get
-      local.set $6
+      local.set $7
       loop $while-continue|1
        local.get $4
        i32.load
@@ -9277,7 +9268,7 @@
          i32.const 1
          i32.add
          call $~lib/array/Array<u64>#__get
-         local.get $6
+         local.get $7
          local.get $9
          i64.add
          i64.eq
@@ -9289,9 +9280,9 @@
          i32.load offset=4
          local.get $3
          call $~lib/array/Array<u64>#__get
-         local.get $6
+         local.get $7
          i64.add
-         local.set $6
+         local.set $7
          local.get $3
          i32.const 1
          i32.add
@@ -9304,7 +9295,7 @@
       local.get $9
       call $~lib/array/Array<u64>#push
       local.get $12
-      local.get $6
+      local.get $7
       call $~lib/array/Array<u64>#push
       local.get $3
       i32.const 1
@@ -9349,10 +9340,10 @@
     local.get $3
     local.get $0
     call $assembly/index/Index.indexTransactionInscriptions
-    local.get $7
+    local.get $6
     i32.const 1
     i32.add
-    local.set $7
+    local.set $6
     br $for-loop|01
    end
   end

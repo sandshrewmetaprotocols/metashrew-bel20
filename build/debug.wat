@@ -7725,14 +7725,8 @@
   return
  )
  (func $assembly/index/blockReward (param $height i64) (result i64)
-  f64.const 5e9
+  f64.const 5e11
   i64.trunc_sat_f64_u
-  i64.const 1
-  local.get $height
-  i64.const 210000
-  i64.div_u
-  i64.shl
-  i64.div_u
   return
  )
  (func $~lib/array/Array<u64>#set:buffer (param $this i32) (param $buffer i32)
